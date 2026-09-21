@@ -82,6 +82,17 @@ h1{font-size:clamp(52px,10vw,150px)}
 footer .w{border:1px solid var(--line);border-top:0;padding:18px 24px;max-width:1132px;background:rgba(12,12,12,.92)}
 footer{border-top:0;padding-top:0}
 @media(max-width:680px){.card{grid-template-columns:1fr;padding:22px}.mono{width:110px;height:110px;font-size:46px}.stats>div,.stats>div:first-child{padding:22px 20px}}
+.idx .h{color:#6d6d6d;margin-bottom:6px}
+.idx a{display:grid;grid-template-columns:34px 130px 1fr;gap:12px;align-items:baseline;text-decoration:none;color:#e6e6e6;padding:4px 8px;margin:0 -8px;border-left:2px solid transparent;transition:background .15s,border-color .15s}
+.idx a span{color:var(--red)}
+.idx a i{font-style:normal;color:#6d6d6d}
+.idx a:hover,.idx a:focus-visible{background:rgba(255,26,26,.1);border-left-color:var(--red);outline:none}
+.idx a:hover i{color:#bdbdbd}
+.idx .cur{margin-top:6px}
+.idx .c{font-weight:400;color:var(--red);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media(max-width:560px){.idx a{grid-template-columns:28px 1fr}.idx a i{grid-column:2}}
+@media(prefers-reduced-motion:reduce){.idx .c{animation:none}}
 </style>
 </head>
 <body>
@@ -92,14 +103,15 @@ footer{border-top:0;padding-top:0}
 <h1 class="gl" data-t="Engines.&#10;Networks.&#10;Services.">Engines.<br>Networks.<br>Services<i>.</i></h1>
 <p class="lead">I build Galaxy: an integrated digital ecosystem where AEGIS owns the data, the Networks expose it as APIs, and the LANGA services consume it, free and paid, for people and companies.</p>
 <div class="cta"><a class="btn p" href="https://lucaprata.com/">Open lucaprata.com</a><a class="btn" href="https://langa.tv/">Enter LANGA →</a></div>
-<div class="term">
-<div><em>$</em> whoami</div>
-<div>luca prata · founder, ceo &amp; builder</div>
-<div><em>$</em> org</div>
-<div>LANGA CORPORATION S.R.L. · milan, italy</div>
-<div><em>$</em> status</div>
-<div><em>●</em> building</div>
-</div>
+<nav class="term idx" aria-label="Index">
+<div class="h"><em>$</em> ls ~/lucaprata</div>
+<a href="#state"><span>01</span>state<i>numbers from GitHub</i></a>
+<a href="#stack"><span>02</span>stack<i>what I build with</i></a>
+<a href="#whoami"><span>03</span>whoami<i>who I am, where to find me</i></a>
+<a href="https://langacorp.github.io/"><span>04</span>langa<i>open tools ↗</i></a>
+<a href="https://lucaprata.com/"><span>05</span>lucaprata.com<i>the full site ↗</i></a>
+<div class="cur"><em>$</em> <b class="c">▋</b></div>
+</nav>
 </div>
 <div id="state" class="stats">
 <div id="s1"><b>…</b><span class="m">public repos · LucaPRATA</span><small>loading</small></div>
