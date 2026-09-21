@@ -124,14 +124,16 @@ footer{border-top:0;padding-top:0}
 </div>
 </div></section>
 </main>
-<footer><div class="w m">© 2026 Luca Prata · LANGA Corporation S.R.L. · static page · no cookies · no trackers · numbers live from api.github.com</div></footer>
+<footer><div class="w m">© 2026 Luca Prata · LANGA Corporation S.R.L. · static page · no cookies · no trackers · numbers from GitHub, refreshed hourly</div></footer>
 <script>
 (function(){
 function set(id,v,src){var e=document.getElementById(id);if(!e)return;e.querySelector('b').textContent=v;e.querySelector('small').textContent=src}
-function gh(u){return fetch('https://api.github.com/users/'+u).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json()})}
-var ok='live · api.github.com';
-gh('LucaPRATA').then(function(d){set('s1',d.public_repos,ok)}).catch(function(e){set('s1','n/a','n/a · '+e.message)});
-gh('langacorp').then(function(d){set('s2',d.public_repos,ok);set('s3',d.followers,ok);set('s4',new Date(d.created_at).getFullYear(),ok+' · langacorp')}).catch(function(e){['s2','s3','s4'].forEach(function(i){set(i,'n/a','n/a · '+e.message)})});
+var MAX=48;
+fetch('data.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('data.json http '+r.status);return r.json()}).then(function(d){
+var age=(Date.now()-new Date(d.generated_at))/36e5,stamp=d.generated_at.slice(0,16).replace('T',' ')+' UTC',src=(age>MAX?'stale · data from ':'data from ')+stamp,u=d.users;
+set('s1',u.LucaPRATA.public_repos,src);set('s2',u.langacorp.public_repos,src);set('s3',u.langacorp.followers,src);set('s4',new Date(u.langacorp.created_at).getUTCFullYear(),src+' · langacorp');
+if(age>MAX)[].forEach.call(document.querySelectorAll('.stats small'),function(e){e.style.color='#ff1a1a'});
+}).catch(function(e){['s1','s2','s3','s4'].forEach(function(i){set(i,'n/a','n/a · '+e.message)})});
 var t=document.querySelector('.track');if(t)t.innerHTML+=t.innerHTML;
 })();
 </script>
