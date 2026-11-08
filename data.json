@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T17:01:45Z",
+ "generated_at": "2026-11-08T21:09:18Z",
  "repos": [
   {
    "archived": false,
@@ -8,7 +8,16 @@
    "html_url": "https://github.com/langacorp/langacorp.github.io",
    "language": "HTML",
    "name": "langacorp.github.io",
-   "pushed_at": "2026-11-08T16:40:15Z"
+   "pushed_at": "2026-11-08T21:07:23Z"
+  },
+  {
+   "archived": false,
+   "description": "Seven reusable pieces from a React Three Fiber project: hooks for interactive 3D objects, two GPU shaders, a base material. No scene, no models, no dependencies beyond three and r3f.",
+   "fork": false,
+   "html_url": "https://github.com/langacorp/langa-3d",
+   "language": "JavaScript",
+   "name": "langa-3d",
+   "pushed_at": "2026-11-08T18:34:56Z"
   },
   {
    "archived": false,
@@ -81,15 +90,6 @@
    "language": "Dart",
    "name": "langa-flutter-bits",
    "pushed_at": "2026-09-04T12:18:35Z"
-  },
-  {
-   "archived": false,
-   "description": "Seven reusable pieces from a React Three Fiber project: hooks for interactive 3D objects, two GPU shaders, a base material. No scene, no models, no dependencies beyond three and r3f.",
-   "fork": false,
-   "html_url": "https://github.com/langacorp/langa-3d",
-   "language": "JavaScript",
-   "name": "langa-3d",
-   "pushed_at": "2026-09-04T12:17:48Z"
   },
   {
    "archived": false,
